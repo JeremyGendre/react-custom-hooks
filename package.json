@@ -1,13 +1,13 @@
 {
   "name": "@jeremygendre/react-custom-hooks",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/JeremyGendre"
+    "@jeremygendre:registry": "https://npm.pkg.github.com"
   },
   "version": "1.0.0",
   "description": "custom hooks for react",
   "scripts": {
     "rollup": "rollup -c",
-    "test": "test"
+    "test": "exit 0"
   },
   "author": "Jérémy Gendre",
   "license": "ISC",
