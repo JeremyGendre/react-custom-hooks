@@ -1,15 +1,17 @@
 import {RefObject, useEffect} from "react";
 
-export default function useClickAway(ref: RefObject<Element>, callBack: () => void){
+type Handler = (event: MouseEvent) => void
+
+export default function useClickAway(ref: RefObject<Element>, callBack: Handler){
 
     const handleRefClick = (event: MouseEvent) => {
         if(!ref.current?.contains(event.target as Element)){
-            callBack();
+            callBack(event);
         }
     };
 
     useEffect(() => {
-        document.addEventListener('click', handleRefClick);
-        return () => {document.removeEventListener('click', handleRefClick)};
+        window.addEventListener('mousedown', handleRefClick);
+        return () => {window.removeEventListener('mousedown', handleRefClick)};
     },[]);
 }
