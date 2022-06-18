@@ -1,5 +1,8 @@
 {
-  "name": "react-custom-hooks",
+  "name": "@jeremygendre/react-custom-hooks",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/JeremyGendre"
+  },
   "version": "1.0.0",
   "description": "custom hooks for react",
   "scripts": {
