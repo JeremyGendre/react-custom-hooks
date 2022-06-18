@@ -8,7 +8,6 @@ interface State<T> {
 
 type Cache<T> = { [url: string]: T }
 
-// discriminated union type
 type Action<T> =
     | { type: 'loading' }
     | { type: 'fetched'; payload: T }
