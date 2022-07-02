@@ -103,6 +103,28 @@ export default function MyComponent() {
 ```
 <hr/>
 
+### useMove
+
+Property | Type | Required | Description
+--- | --- | --- | ---
+**ref** | `RefObject<HTMLElement>` | yes | ref element that you want to move
+
+- Usage Exemple : 
+```typescript jsx
+export default function MyComponent() {
+    const myRef = useRef(null);
+    useMove(myRef);
+    
+    return (
+        <>
+            <div draggable ref={myRef} style={{position: 'absolute'}}>drag me</div>
+            ...
+        </>
+    )
+}
+```
+<hr/>
+
 ### useTimeout
 
 Property | Type | Required | Description
