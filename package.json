@@ -4,7 +4,7 @@
     "registry":"https://npm.pkg.github.com"
   },
   "repository": "git://github.com/jeremygendre/react-custom-hooks.git",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "custom hooks for react",
   "scripts": {
     "rollup": "rollup -c",
