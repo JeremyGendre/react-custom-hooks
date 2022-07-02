@@ -125,6 +125,20 @@ export default function MyComponent() {
 ```
 <hr/>
 
+### useScroll
+
+- Usage Exemple : 
+```typescript jsx
+export default function MyComponent() {
+    const scrollData = useScroll();
+
+    console.log(scrollData.scrollX, scrollData.scrollY); // window scroll values
+
+    ...
+}
+```
+<hr/>
+
 ### useTimeout
 
 Property | Type | Required | Description
