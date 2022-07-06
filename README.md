@@ -180,7 +180,13 @@ export default function MyComponent() {
     
     return (
         <>
-            <div draggable ref={myRef} style={{position: 'absolute'}}>drag me</div>
+            <div 
+                draggable 
+                ref={myRef} 
+                style={{position: 'absolute'}}
+            >
+                drag me
+            </div>
             ...
         </>
     )
