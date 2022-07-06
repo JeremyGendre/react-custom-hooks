@@ -57,7 +57,7 @@ export default function MyComponent() {
               value={value}
               onChange={(e) => setValue(e.currentTarget.value)}
             />
-            {debouncedValue} {/* <- debouncedValue will be displayed after not typing for 500ms */}
+            {debouncedValue} {/* <- debouncedValue will change after not typing for 500ms */}
         </div>
     )
 }
