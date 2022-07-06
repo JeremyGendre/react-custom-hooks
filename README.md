@@ -64,6 +64,34 @@ export default function MyComponent() {
 ```
 <hr/>
 
+### useDebounceLeading
+
+Property | Type | Required | Description
+--- | --- | --- | ---
+**callback** | `(...args: any) => void` | yes | Callback function which will be called after a delay
+**timeout** | `number` | no | Timeout's delay
+
+- Usage Exemple : 
+```typescript jsx
+export default function MyComponent() {
+    const [count, setCount] = useState(0);
+    
+    // count will be incremented by 1 only each 500 ms
+    // even if the button is clicked 10 times in 1s
+    const debouncedClick = useDebounceLeading(() => {
+        setCount((prev) => prev + 1);
+     }, 500);
+    
+    return (
+        <>
+            <button onClick={debouncedClick}>click</button>
+            <div>{count}</div>
+        </>
+    )
+}
+```
+<hr/>
+
 ### useFetch
 
 Property | Type | Required | Description
