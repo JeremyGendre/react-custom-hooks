@@ -29,6 +29,41 @@ export default function MyComponent() {
 ```
 <hr/>
 
+### useDebounce
+
+Property | Type | Required | Description
+--- | --- | --- | ---
+**callback** | `(...args: any) => void` | yes | Callback function which will be called after a delay
+**timeout** | `number` | no | Timeout's delay
+
+- Usage Exemple : 
+```typescript jsx
+export default function MyComponent() {
+    const [value, setValue] = useState("");
+    const [debouncedValue, setDebouncedValue] = useState("");
+    
+    const debouncedValueCallback = useDebounce((newValue) => {
+        setDebouncedValue(newValue);
+    }, 500);
+    
+    useEffect(() => {
+        debouncedValueCallback(value);
+    }, [value, debouncedValueCallback]);
+
+    
+    return (
+        <div>
+            <input
+              value={value}
+              onChange={(e) => setValue(e.currentTarget.value)}
+            />
+            {debouncedValue} {/* <- debouncedValue will be displayed after not typing for 500ms */}
+        </div>
+    )
+}
+```
+<hr/>
+
 ### useFetch
 
 Property | Type | Required | Description
