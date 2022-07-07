@@ -2,6 +2,18 @@
 
 Custom hooks library usable with react.
 
+## Table of content
+
+- [useClickAway](#useclickaway)
+- [useDebounce](#usedebounce)
+- [useDebounceLeading](#usedebounceleading)
+- [useFetch](#usefetch)
+- [useInterval](#useinterval)
+- [useLog](#uselog)
+- [useMove](#usemove)
+- [useScroll](#usescroll)
+- [useTimeout](#usetimeout)
+
 ## Documentation
 
 ### useClickAway
