@@ -7,6 +7,7 @@ Custom hooks library usable with react.
 - [useClickAway](#useclickaway)
 - [useDebounce](#usedebounce)
 - [useDebounceLeading](#usedebounceleading)
+- [useDebounceValue](#usedebouncevalue)
 - [useFetch](#usefetch)
 - [useInterval](#useinterval)
 - [useLog](#uselog)
@@ -61,7 +62,6 @@ export default function MyComponent() {
     useEffect(() => {
         debouncedValueCallback(value);
     }, [value, debouncedValueCallback]);
-
     
     return (
         <div>
@@ -99,6 +99,33 @@ export default function MyComponent() {
             <button onClick={debouncedClick}>click</button>
             <div>{count}</div>
         </>
+    )
+}
+```
+<hr/>
+
+### useDebounceValue
+
+Property | Type | Required | Description
+--- | --- | --- | ---
+**value** | `string` | yes | Value to debounce
+
+Improve the `useDebounce` hook by returning the debounced value and not have to handle it yourself in your component.
+
+- Usage Exemple : 
+```typescript jsx
+export default function MyComponent() {
+    const [value, setValue] = useState('');
+    const debouncedValue = useDebounceValue(value);
+    
+    return (
+        <div>
+            <input
+              value={value}
+              onChange={(e) => setValue(e.currentTarget.value)}
+            />
+            {debouncedValue} {/* <- debouncedValue will change after not typing for 500ms */}
+        </div>
     )
 }
 ```
