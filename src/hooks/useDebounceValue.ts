@@ -3,14 +3,15 @@ import useDebounce from "./useDebounce";
 
 /**
  * Debounce the given value
- * @param value
+ * @param value value to debounce
+ * @param timer in ms (default 500) : debounce time
  */
-export default function useDebounceValue(value = '') {
+export default function useDebounceValue(value: string, timer: number = 500) {
     const [debouncedValue, setDebouncedValue] = useState("");
 
     const debouncedValueCallback = useDebounce((newValue) => {
         setDebouncedValue(newValue);
-    }, 500);
+    }, timer);
 
     useEffect(() => {
         debouncedValueCallback(value);

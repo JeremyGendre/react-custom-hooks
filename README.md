@@ -110,6 +110,7 @@ export default function MyComponent() {
 Property | Type | Required | Description
 --- | --- | --- | ---
 **value** | `string` | yes | Value to debounce
+**timer** | `number` | no | Debounce's delay in ms (default 500)
 
 Improve the `useDebounce` hook by returning the debounced value and not have to handle it yourself in your component.
 
@@ -117,7 +118,7 @@ Improve the `useDebounce` hook by returning the debounced value and not have to 
 ```typescript jsx
 export default function MyComponent() {
     const [value, setValue] = useState('');
-    const debouncedValue = useDebounceValue(value);
+    const debouncedValue = useDebounceValue(value, 400);
     
     return (
         <div>
@@ -125,7 +126,7 @@ export default function MyComponent() {
               value={value}
               onChange={(e) => setValue(e.currentTarget.value)}
             />
-            {debouncedValue} {/* <- debouncedValue will change after not typing for 500ms */}
+            {debouncedValue} {/* <- debouncedValue will change after not typing for 400ms */}
         </div>
     )
 }
