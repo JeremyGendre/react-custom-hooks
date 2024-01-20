@@ -8,3 +8,4 @@ export { default as useScroll } from './useScroll';
 export { default as useDebounce } from './useDebounce';
 export { default as useDebounceLeading } from './useDebounceLeading';
 export { default as useDebounceValue } from './useDebounceValue';
+export { default as usePrevious } from './usePrevious';

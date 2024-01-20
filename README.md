@@ -12,6 +12,7 @@ Custom hooks library usable with react.
 - [useInterval](#useinterval)
 - [useLog](#uselog)
 - [useMove](#usemove)
+- [usePrevious](#useprevious)
 - [useScroll](#usescroll)
 - [useTimeout](#usetimeout)
 
@@ -232,6 +233,34 @@ export default function MyComponent() {
 }
 ```
 <hr/>
+
+### usePrevious
+
+Property | Type | Required | Description
+--- | --- | --- | ---
+**value** | `any` | yes | value that you want to track the previous value of
+
+- Usage Exemple : 
+```typescript jsx
+export default function MyComponent() {
+    const [count, setCount] = useState(1);
+    const previousCount = usePrevious(count);
+    
+    return (
+        <>
+            <button onClick={setCount(prev => prev + 1)}>increase counter</button>
+            <div>
+                count : { count } {/* <- after one click, count = 2 */}
+            </div>
+            <div>
+                previous count : { previousCount } {/* <- after one click, previousCount = 1 */}
+            </div>
+        </>
+    )
+}
+```
+<hr/>
+
 
 ### useScroll
 
